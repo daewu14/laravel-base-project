@@ -2,7 +2,9 @@
 
 namespace Tests\Unit\User;
 
+use App\Http\Repository\User\AllRepository;
 use App\Services\UserService;
+use Mockery;
 use Tests\TestCase;
 
 class IndexTest extends TestCase
@@ -14,6 +16,12 @@ class IndexTest extends TestCase
      */
     public function test_index()
     {
-       $this->assertTrue(count((new UserService)->all()) > 1);
+        $mock = Mockery::mock("overload:".AllRepository::class)->shouldReceive("index")->andReturn("test");
+
+        $service = (new UserService)->all();
+
+        echo "\nresult : ".json_encode($service);
+
+       self::assertTrue(true);
     }
 }
