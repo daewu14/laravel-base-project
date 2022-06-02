@@ -19,9 +19,14 @@ class DeleteTest extends TestCase
     {
         $this->withoutExceptionHandling();
 
-        $user = User::factory()->create(); 
+        $id_user = User::create([
+            'name' => 'Example Name',
+            'email' => 'user@test' . rand(1, 99) . '.com',
+            'password' => Hash::make('test124556678')
+        ])->id;
+
         // cek route method delete
-        $this->delete("/user/$user->id");
-        $this->assertDatabaseMissing('users', ['id' => $user->id]);
+        $this->delete("/user/$id_user");
+        $this->assertDatabaseMissing('users', ['id' => $id_user]);
     }
 }
