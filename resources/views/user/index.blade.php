@@ -82,12 +82,12 @@
 @endsection
 
 @section('css-tambahan')
-    <link href="{{ asset('storage/theme/plugins/DataTables/datatables.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('theme/plugins/DataTables/datatables.min.css') }}" rel="stylesheet">
 @endsection
 
 @section('js-tambahan')
-    <script src="{{ asset('storage/theme/plugins/DataTables/datatables.min.js') }}"></script>
-    {{-- <script src="{{ asset('storage/theme/js/pages/datatables.js')}}"></script> --}}
+    <script src="{{ asset('theme/plugins/DataTables/datatables.min.js') }}"></script>
+    {{-- <script src="{{ asset('theme/js/pages/datatables.js')}}"></script> --}}
     <script type="text/javascript">
         $(function() {
             $.ajaxSetup({
