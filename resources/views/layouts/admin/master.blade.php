@@ -15,7 +15,7 @@
     <link href="https://fonts.googleapis.com/css?family=Poppins:400,500,700,800&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <link href="{{ asset('storage/theme/plugins/font-awesome/css/all.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('theme/plugins/font-awesome/css/all.min.css') }}" rel="stylesheet">
     <link rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/jquery.perfect-scrollbar/1.5.5/css/perfect-scrollbar.min.css"
         integrity="sha512-ygIxOy3hmN2fzGeNqys7ymuBgwSCet0LVfqQbWY10AszPMn2rB9JY0eoG0m1pySicu+nvORrBmhHVSt7+GI9VA=="
@@ -24,8 +24,8 @@
         integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- Theme Styles -->
-    <link href="{{ asset('storage/theme/css/main.css') }}" rel="stylesheet">
-    <link href="{{ asset('storage/theme/css/custom.css') }}" rel="stylesheet">
+    <link href="{{ asset('theme/css/main.css') }}" rel="stylesheet">
+    <link href="{{ asset('theme/css/custom.css') }}" rel="stylesheet">
     @yield('css-tambahan')
 </head>
 
@@ -54,7 +54,7 @@
                             <a class="nav-link profile-dropdown" href="#" id="profileDropDown" role="button"
                                 data-bs-toggle="dropdown" aria-expanded="false">
                                 @if (empty(auth()->user()->avatar))
-                                    <img src="{{ asset('storage/theme/images/avatars/profile-image.png') }}" alt=""
+                                    <img src="{{ asset('theme/images/avatars/profile-image.png') }}" alt=""
                                         class="rounded-15 shadow-sm">
                                 @else
                                     <img src="{{ auth()->user()->avatar }}" alt="" class="rounded-15 shadow-sm">
@@ -116,7 +116,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.perfect-scrollbar/1.5.5/perfect-scrollbar.min.js"
         integrity="sha512-X41/A5OSxoi5uqtS6Krhqz8QyyD8E/ZbN7B4IaBSgqPLRbWVuXJXr9UwOujstj71SoVxh5vxgy7kmtd17xrJRw=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="{{ asset('storage/theme/js/main.min.js') }}"></script>
+    <script src="{{ asset('theme/js/main.min.js') }}"></script>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     @yield('js-tambahan')
 </body>
