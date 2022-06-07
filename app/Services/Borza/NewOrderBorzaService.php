@@ -49,18 +49,13 @@ class NewOrderBorzaService extends ServiceBase
         }
 
         $response = (new OrderBorzoRepository)->price($this->data);
-
-        try {
-            if ($response['is_successful'] == false) {
-                # jika http error maka
-                return self::error(['error' => $response]);
-            } else {
-                # code..
-                return self::success($response);
-            }
-        } catch (\Throwable $th) {
-            //throw $th;
-            return self::error(['error' => $th]);
+        
+        if ($response->status == 200) {
+            # code..
+            return self::success($response->data);
+        } else {
+            # jika http error maka
+            return self::error(null, $response->message);
         }
         // return self::success("hai");
     }

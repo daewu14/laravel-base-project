@@ -34,27 +34,17 @@ class PriceBorzaService extends ServiceBase {
     public function call(): ServiceResponse {
 
         if ($this->validate()->fails()) {
-            $data = [
-                'error' => $this->validate()->errors()->all()
-            ];
-            return $data;
+            return self::error(['error' => $this->validate()->errors()->all()]);
         }
 
         $response = (new PriceBorzoRepository)->price($this->data);
-
-        try {
-            if ($response['is_successful'] == false) {
-                # jika http error maka
-                return self::error(['error' => $response]);
-                
-            } else {
-                # code..
-                return self::success($response);
-            }
-            
-        } catch (\Throwable $th) {
-            //throw $th;
-            return $th;
+        // dd($response->data);
+        if ($response->status == 200) {
+            # code..
+            return self::success($response->data);
+        } else {
+            # jika http error maka
+            return self::error(null, $response->message);
         }
     }
 }
