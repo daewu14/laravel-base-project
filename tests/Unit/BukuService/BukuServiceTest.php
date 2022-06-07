@@ -21,7 +21,7 @@ class BukuServiceTest extends TestCase
     {
         \Mockery::mock("overload:" . BukuRepository::class)->shouldReceive('index')->andReturn('test');
         $data = (new BukuIndexService)->call();
-        echo "\nresult : " . json_encode($data);
+        // echo "\nresult : " . json_encode($data);
         $this->assertTrue($data->status() == 200);
     }
 
@@ -29,7 +29,7 @@ class BukuServiceTest extends TestCase
     {
         \Mockery::mock("overload:" . BukuRepository::class)->shouldReceive('index')->andReturn('test');
         $data = (new BukuIndexService)->call();
-        echo "\nresult : " . json_encode($data);
+        // echo "\nresult : " . json_encode($data);
         $this->assertFalse($data->status() == 404);
     }
 
@@ -54,7 +54,7 @@ class BukuServiceTest extends TestCase
 
         $service = (new BukuService($data))->call();
 
-        echo "\nresult : " . json_encode($service);
+        // echo "\nresult : " . json_encode($service);
 
         $this->assertTrue($service->status() == 200);
         $this->assertTrue($service->data() == $expect);
@@ -82,7 +82,7 @@ class BukuServiceTest extends TestCase
 
         $service = (new BukuService($data))->call();
 
-        echo "\nresult : " . json_encode($service);
+        // echo "\nresult : " . json_encode($service);
 
         $this->assertTrue($service->status() != 200);
     }
