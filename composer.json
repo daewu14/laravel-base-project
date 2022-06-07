@@ -11,6 +11,7 @@
         "laravel/framework": "^8.75",
         "laravel/sanctum": "^2.11",
         "laravel/tinker": "^2.5",
+        "midtrans/midtrans-php": "^2.5",
         "yajra/laravel-datatables-oracle": "~9.0"
     },
     "require-dev": {
@@ -59,5 +60,6 @@
         "sort-packages": true
     },
     "minimum-stability": "dev",
-    "prefer-stable": true
+    "prefer-stable": true,
+    "php-implementor.useComposerAutoloads": true
 }

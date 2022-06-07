@@ -29,7 +29,7 @@ class UserRegistrationServiceTest extends TestCase {
 
         $service = (new UserRegistrationService($data))->call();
 
-        echo "\nresult : ".json_encode($service);
+        // echo "\nresult : ".json_encode($service);
 
         self::assertTrue($service->status() == 200);
         self::assertTrue($service->data() == $expect);
@@ -57,7 +57,7 @@ class UserRegistrationServiceTest extends TestCase {
 
         $service = (new UserRegistrationService($data))->call();
 
-        echo "\nresult : ".json_encode($service);
+        // echo "\nresult : ".json_encode($service);
 
         self::assertTrue($service->status() != 200);
 

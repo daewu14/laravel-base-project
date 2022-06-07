@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Services\Buku\BukuIndexService;
 use App\Services\Buku\BukuService;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Http;
 
 class BukuController extends Controller
 {
@@ -15,8 +16,29 @@ class BukuController extends Controller
      */
     public function index()
     {
-        $data = (new BukuIndexService)->call();
-        dd($data);
+        // $data = [
+        //     'receiver' => '6281912488040',
+        //     'message' => [
+        //         'text' => 'hai'
+        //     ]
+        // ];
+        // $response = Http::contentType("application/json")->send('POST', 'http://127.0.0.1:5500/chats/send?id=ojan', [
+        //     json_encode($data)
+        // ])->json();
+
+        // // dd($response);
+        // echo json_encode($response);
+
+        $response = Http::withHeaders([
+            'Content-Type' => 'application/json',
+        ])->post('http://127.0.0.1:5500/chats/send?id=ojan', [
+            'receiver' => '6281912488040',
+            'message' => [
+                'text' => 'hai'
+            ]
+        ])->json();
+
+        echo json_encode($response);
     }
 
     /**
