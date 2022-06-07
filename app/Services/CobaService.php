@@ -4,7 +4,7 @@ namespace App\Services;
 
 use App\Services\Coba\TambahService;
 
-class CobaService 
+class CobaService
 {
     public function index($satu, $dua)
     {
