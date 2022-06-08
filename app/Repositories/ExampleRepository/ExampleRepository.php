@@ -7,13 +7,20 @@ use App\Base\HttpService;
 class ExampleRepository implements ExampleContract {
 
     public function getInquiry() {
-        return HttpService::get()
-            ->setUrl("https://tdev.kiriminaja.com/api/v7/member/banner")
+        return HttpService::post()
+            ->setUrl("https://robotapitest-id.borzodelivery.com/api/business/1.1/calculate-order")
             ->setServiceName("example") // set your service inquiry's name
-            ->addHeader('Cache-Control', 'no-cache')
-            ->addHeader('Content-Type', 'application/json')
+            ->addHeader('X-DV-Auth-Token', '3304B0D89A2F2A6DC6117902AEF51D5F1A3F861B')
             ->setData([
-                "query_example" => "blabla"
+                "matter" => "blabla",
+                "points" => [
+                    [
+                        "address" => "cikarang pusat",
+                    ],
+                    [
+                        "address" => "bandung selatan",
+                    ],
+                ]
             ]) // to set your parameter
             ->call();
     }

@@ -1,30 +1,55 @@
 <?php
- 
-namespace app\Services\Midtrans;
 
-use Midtrans\Config;
+namespace App\Services\Midtrans;
 
-class MidtransService {
-    protected $serverKey;
-    protected $isProduction;
-    protected $isSanitized;
-    protected $is3ds;
- 
-    public function __construct()
+use App\Base\ServiceBase;
+use App\Repositories\MidtransRepository\MidtransRepository;
+use App\Repositories\MidtransRepository\Models\MidtransData;
+use App\Responses\ServiceResponse;
+use Illuminate\Support\Facades\Validator;
+
+class MidtransService extends ServiceBase
+{
+
+    public function __construct(MidtransData $data)
     {
-        $this->serverKey = config('midtrans.server_key');
-        $this->isProduction = config('midtrans.is_production');
-        $this->isSanitized = config('midtrans.is_sanitized');
-        $this->is3ds = config('midtrans.is_3ds');
- 
-        $this->_configureMidtrans();
+        $this->data = $data;
     }
- 
-    public function _configureMidtrans()
+
+    /**
+     * Validate the data
+     *
+     * @return \Illuminate\Contracts\Validation\Validator
+     */
+    protected function validate(): \Illuminate\Contracts\Validation\Validator
     {
-        Config::$serverKey = $this->serverKey;
-        Config::$isProduction = $this->isProduction;
-        Config::$isSanitized = $this->isSanitized;
-        Config::$is3ds = $this->is3ds;
+        return Validator::make($this->data->toArray(), [
+           "pengirim" => "required",
+           "penerima" => "required"
+        ]);
+    }
+
+    /**
+     * main method of this service
+     *
+     * @return ServiceResponse
+     */
+    public function call(): ServiceResponse
+    {
+
+        if ($this->validate()->fails()) {
+            return self::error(['error' => $this->validate()->errors()->all()]);
+        }
+
+        // $response = (new MidtransRepository)->pay($this->data);
+        
+        // if ($response->status == 200) {
+        //     # code..
+        //     return self::success($response->data);
+        // } else {
+        //     # jika http error maka
+        //     return self::error(null, $response->message);
+        // }
+        return self::success("hai");
     }
 }

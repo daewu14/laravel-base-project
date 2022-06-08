@@ -312,7 +312,7 @@
                     dataType: 'json',
                     success: function(response) {
                         if (response.status == 300) {
-                            console.log(response['data']['error']['parameter_errors']);
+                            console.log(response);
                             Swal.fire({
                                 icon: "error",
                                 title: "Mohon Maaf !",
@@ -342,7 +342,7 @@
                                 if (result.dismiss === Swal.DismissReason.timer) {
                                     $('#ItemForm').addClass('d-none');
                                     $('#OrderForm').removeClass('d-none');
-                                    $('.harga').text('Rp. ' + response.data);
+                                    $('.harga').text('Rp. ' + response['data']['order']['payment_amount']);
                                     $("#ItemForm").trigger("reset");
                                 }
                             });

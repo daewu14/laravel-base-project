@@ -9,6 +9,10 @@
         <a href="{{ route('user.index') }}"><i data-feather="user"></i>User Management</a>
     </li>
 
+    <li class="{{ request()->is('orders*') ? 'active-page' : '' }}">
+        <a href="{{ route('orders.index') }}"><i data-feather="shopping-bag"></i>Midtrans Integration</a>
+    </li>
+
     <li class="{{ request()->is('borzo*') ? 'active-page' : '' }}">
         <a href="{{ route('borzo') }}"><i data-feather="archive"></i>Borzo Integration</a>
     </li>
