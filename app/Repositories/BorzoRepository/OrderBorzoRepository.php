@@ -5,10 +5,12 @@ namespace App\Repositories\BorzoRepository;
 use App\Base\HttpService;
 use App\Repositories\BorzoRepository\Models\OrderBorzoData;
 use App\Repositories\BorzoRepository\Models\PriceBorzoData;
+use App\Services\Borza\Config\BorzoConfig;
 use Illuminate\Support\Facades\Http;
 
 class OrderBorzoRepository implements OrderBorzoContract
 {
+    use BorzoConfig;
 
     public function price(OrderBorzoData $data)
     {
@@ -24,9 +26,9 @@ class OrderBorzoRepository implements OrderBorzoContract
         }
 
         return HttpService::post()
-            ->setUrl("https://robotapitest-id.borzodelivery.com/api/business/1.1/create-order")
+            ->setUrl("{$this->getBaseUrl()}api/business/1.1/create-order")
             ->setServiceName("NewOrderBorza") // set your service inquiry's name
-            ->addHeader('X-DV-Auth-Token', '3304B0D89A2F2A6DC6117902AEF51D5F1A3F861B')
+            ->addHeader('X-DV-Auth-Token', $this->getApiKey())
             ->setData([
                 // this parameter
                 "matter" => $data->isi,
