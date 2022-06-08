@@ -21,14 +21,10 @@ use Illuminate\Support\Facades\Route;
 Route::middleware(['cors'])->group(function () {
     Route::resource('/user', UserController::class);
     Route::resource('/buku', BukuController::class);
-    Route::get('/whatsapp', [WhatsappController::class, 'index'])->name('whatsapp');
-    Route::post('/whatsapp', [WhatsappController::class, 'store'])->name('new.whatsapp');
-    Route::get('/whatsapp/{no_wa}', [WhatsappController::class, 'show'])->name('show.whatsapp');
     Route::resource('orders', OrderController::class)->only(['index', 'show']);
-
 
     Route::get('borzo', [BorzoController::class, 'index'])->name('borzo');
     Route::post('borzo', [BorzoController::class, 'store'])->name('cektarif');
-    // Route::get('borzo/ongkir', [BorzoController::class, 'store'])->name('cektarif');
+    Route::get('borzo/http', [BorzoController::class, 'http_coba']);
     Route::post('borzo/new', [BorzoController::class, 'new_order'])->name('new_order');
 });
