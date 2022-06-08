@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Api\AuthController;
 use App\Http\Controllers\Api\BorzoController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -16,9 +17,16 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
+    return response()->json(['hai']);
 });
 
-Route::get('borzo/status', [BorzoController::class, 'index']);
-Route::post('borzo/price', [BorzoController::class, 'store']);
-Route::post('borzo/order', [BorzoController::class, 'new_order']);
+Route::match(['get', 'post'], 'login', [AuthController::class, 'login'])->name('login');
+Route::post('register', [AuthController::class, 'register']);
+
+Route::middleware(['auth:sanctum'])->group(function () {
+    Route::get('borzo/status', [BorzoController::class, 'index']);
+    Route::post('borzo/price', [BorzoController::class, 'store']);
+    Route::post('borzo/order', [BorzoController::class, 'new_order']);
+    Route::post('logout', [AuthController::class, 'logout']);
+});
+
