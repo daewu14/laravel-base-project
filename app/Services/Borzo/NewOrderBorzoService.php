@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Services\Borza;
+namespace App\Services\Borzo;
 
 use App\Base\ServiceBase;
 use App\Repositories\BorzoRepository\BorzoRepository;
@@ -9,7 +9,7 @@ use App\Repositories\BorzoRepository\OrderBorzoRepository;
 use App\Responses\ServiceResponse;
 use Illuminate\Support\Facades\Validator;
 
-class NewOrderBorzaService extends ServiceBase
+class NewOrderBorzoService extends ServiceBase
 {
 
     public function __construct(OrderBorzoData $data)
