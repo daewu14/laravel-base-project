@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Services\Borza;
+namespace App\Services\Borzo;
 
 use App\Http\Repository\User\AllRepository;
 use Illuminate\Support\Facades\Http;
 
-class BorzaHttpService 
+class BorzoHttpService 
 {
     public function call()
     {

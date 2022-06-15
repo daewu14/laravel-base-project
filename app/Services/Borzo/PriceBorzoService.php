@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Services\Borza;
+namespace App\Services\Borzo;
 
 use App\Base\ServiceBase;
 use App\Repositories\BorzoRepository\PriceBorzoRepository;
@@ -8,7 +8,7 @@ use App\Repositories\BorzoRepository\Models\PriceBorzoData;
 use App\Responses\ServiceResponse;
 use Illuminate\Support\Facades\Validator;
 
-class PriceBorzaService extends ServiceBase {
+class PriceBorzoService extends ServiceBase {
 
     public function __construct(PriceBorzoData $data) {
         $this->data = $data;

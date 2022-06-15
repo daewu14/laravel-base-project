@@ -4,9 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Repositories\BorzoRepository\Models\OrderBorzoData;
 use App\Repositories\BorzoRepository\Models\PriceBorzoData;
-use App\Services\Borza\BorzaService;
-use App\Services\Borza\NewOrderBorzaService;
-use App\Services\Borza\PriceBorzaService;
+use App\Services\Borzo\BorzoService;
+use App\Services\Borzo\NewOrderBorzoService;
+use App\Services\Borzo\PriceBorzoService;
 use App\Services\ExampleService\ExampleService;
 use Illuminate\Http\Request;
 
@@ -15,10 +15,10 @@ class BorzoController extends Controller
     public function index(Request $request)
     {
 
-        // dd((new BorzaService)->status());
+        // dd((new BorzoService)->status());
         if ($request->ajax()) {
             # jika ada request ajax check status maka
-            return (new BorzaService)->status();
+            return (new BorzoService)->status();
         }
 
         return view('borzo.index');
@@ -29,7 +29,7 @@ class BorzoController extends Controller
         $data           = new PriceBorzoData;
         $data->pengirim    = $request->pengirim;
         $data->penerima    = $request->penerima;
-        return response()->json((new PriceBorzaService($data))->call());
+        return response()->json((new PriceBorzoService($data))->call());
     }
 
     public function new_order(Request $request)
@@ -43,7 +43,7 @@ class BorzoController extends Controller
         $data->alamat_penerima = $request->alamat_penerima;
         $data->nama_pengirim = $request->nama_pengirim;
         $data->nama_penerima = $request->nama_penerima;
-        return response()->json((new NewOrderBorzaService($data))->call());
+        return response()->json((new NewOrderBorzoService($data))->call());
     }
 
     public function http_coba()
@@ -57,6 +57,6 @@ class BorzoController extends Controller
         $data->alamat_penerima = "alamat_penerima";
         $data->nama_pengirim = "Mas Test";
         $data->nama_penerima = "Mas Unit";
-       dd((new NewOrderBorzaService($data))->call());
+       dd((new NewOrderBorzoService($data))->call());
     }
 }

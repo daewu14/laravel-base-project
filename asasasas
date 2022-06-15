@@ -1,0 +1,149 @@
+[33mcommit 929304f105dfa077a536312e09b0cf68077b692a[m[33m ([m[1;36mHEAD -> [m[1;32mdevel/ojan[m[33m, [m[1;31morigin/devel/ojan[m[33m)[m
+Author: Fauzan Taqiyuddin <kelaswekeend.id@gmail.com>
+Date:   Wed Jun 8 13:49:17 2022 +0700
+
+    Sanctum Rest API auth Borzo sancrum
+
+[33mcommit 182500c6170a6eca965c4e1f9dab22268a945287[m
+Author: Fauzan Taqiyuddin <kelaswekeend.id@gmail.com>
+Date:   Tue Jun 7 18:00:08 2022 +0700
+
+    Unit Test Rest Api [ routes/api.php ] Borzo
+
+[33mcommit bf11032ee65271bf3de4ef43c4ca0d624d8431b2[m
+Author: Fauzan Taqiyuddin <kelaswekeend.id@gmail.com>
+Date:   Tue Jun 7 16:14:39 2022 +0700
+
+    Borzo HTTP Inquery SOLID PATERN
+
+[33mcommit 47ac033d82d23ebdf55a1af3ee4c0ba8f0047ea8[m
+Merge: 8c6554c 1405b30
+Author: Fauzan Taqiyuddin <kelaswekeend.id@gmail.com>
+Date:   Tue Jun 7 14:56:01 2022 +0700
+
+    Merge branch 'devel/daewu' of https://gitlab.com/KiriminAja/laravel-base-project into devel/ojan
+
+[33mcommit 8c6554c173c3cdfafa8461c5af93fc3e357d7659[m
+Author: Fauzan Taqiyuddin <kelaswekeend.id@gmail.com>
+Date:   Tue Jun 7 12:57:16 2022 +0700
+
+    Borzo Impementasi
+
+[33mcommit 1405b308ffcedf1cf990e2f42c3c2499ee960876[m[33m ([m[1;31morigin/devel/daewu[m[33m)[m
+Author: Daewu <daewu.bintara1996@gmail.com>
+Date:   Tue Jun 7 11:24:42 2022 +0700
+
+    add example service with inquiry repository
+
+[33mcommit 99fdb41e9885144024c7b19e6784b79d46beae95[m
+Merge: 0f9eee6 14969f7
+Author: daewubintara14 <daewu.bintara1996@gmail.com>
+Date:   Fri Jun 3 05:18:41 2022 +0000
+
+    Merge branch 'devel/ojan' into 'development'
+    
+    new model and Unit Testing
+    
+    See merge request KiriminAja/laravel-base-project!6
+
+[33mcommit 14969f7d6321d0ac592afa4f2311e428d0d466a4[m
+Author: Fauzan Taqiyuddin <kelaswekeend.id@gmail.com>
+Date:   Fri Jun 3 11:20:55 2022 +0700
+
+    new model and Unit Testing
+
+[33mcommit 0f9eee6837e12a3cf34d9f84a56134440dca2891[m
+Merge: 6f722be fc3cc29
+Author: daewubintara14 <daewu.bintara1996@gmail.com>
+Date:   Thu Jun 2 10:14:56 2022 +0000
+
+    Merge branch 'devel/daewu' into 'development'
+    
+    move UserContract on specific folder
+    
+    See merge request KiriminAja/laravel-base-project!5
+
+[33mcommit 6f722be6e2fd9b5108643baf6717f8e7606350c1[m
+Merge: a545f36 7e38b40
+Author: daewubintara14 <daewu.bintara1996@gmail.com>
+Date:   Thu Jun 2 10:13:59 2022 +0000
+
+    Merge branch 'devel/daewu' into 'development'
+    
+    move UserContract on specific folder
+    
+    See merge request KiriminAja/laravel-base-project!4
+
+[33mcommit fc3cc298ed84fd2301d610a69d800684685e61be[m
+Author: Daewu <daewu.bintara1996@gmail.com>
+Date:   Thu Jun 2 17:13:49 2022 +0700
+
+    move UserContract on specific folder
+
+[33mcommit 7e38b40cd9b64b0a1b84234847d9e688745ec327[m
+Author: Daewu <daewu.bintara1996@gmail.com>
+Date:   Thu Jun 2 17:12:44 2022 +0700
+
+    move UserContract on specific folder
+
+[33mcommit a545f36b4957fbd8ab75f44b9f085e48cdb092d3[m
+Merge: fd1537b a73e442
+Author: daewubintara14 <daewu.bintara1996@gmail.com>
+Date:   Thu Jun 2 10:10:36 2022 +0000
+
+    Merge branch 'devel/daewu' into 'development'
+    
+    create example service
+    
+    See merge request KiriminAja/laravel-base-project!3
+
+[33mcommit a73e4421d01679868919c3538397619152ff2fd4[m
+Author: Daewu <daewu.bintara1996@gmail.com>
+Date:   Thu Jun 2 17:09:45 2022 +0700
+
+    create example service
+
+[33mcommit fd1537bdd4f31938f7fbe3d214e0fa96cba47e5c[m
+Merge: 9cdf4ea 901e460
+Author: daewubintara14 <daewu.bintara1996@gmail.com>
+Date:   Thu Jun 2 09:45:26 2022 +0000
+
+    Merge branch 'devel/ojan' into 'development'
+    
+    Devel/ojan
+    
+    See merge request KiriminAja/laravel-base-project!2
+
+[33mcommit 901e460e66600294e376438c5bb4a40b78695b74[m
+Merge: 9cdf4ea 961ff74
+Author: daewubintara14 <daewu.bintara1996@gmail.com>
+Date:   Thu Jun 2 09:34:49 2022 +0000
+
+    Merge branch 'develojan' into 'devel/ojan'
+    
+    Mockery PhpUnit Test All Passed
+    
+    See merge request KiriminAja/laravel-base-project!1
+
+[33mcommit 961ff74642e775d1fb8eb532ea34bec7d1de03e9[m
+Merge: f657bb7 9cdf4ea
+Author: daewubintara14 <daewu.bintara1996@gmail.com>
+Date:   Thu Jun 2 09:34:40 2022 +0000
+
+    Merge branch 'devel/ojan' into 'develojan'
+    
+    # Conflicts:
+    #   tests/Feature/User/DeleteTest.php
+    #   tests/Unit/User/IndexTest.php
+
+[33mcommit f657bb766cd9ef4aac35e9aead0703053f33ef08[m
+Author: Fauzan Taqiyuddin <kelaswekeend.id@gmail.com>
+Date:   Thu Jun 2 16:28:49 2022 +0700
+
+    Mockery PhpUnit Test All Passed
+
+[33mcommit 9cdf4ea50f209934e9d1fc0b393a3db46872fc0e[m[33m ([m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: Fauzan Taqiyuddin <kelaswekeend.id@gmail.com>
+Date:   Thu Jun 2 13:57:07 2022 +0700
+
+    Repository, Service, Unit Test
