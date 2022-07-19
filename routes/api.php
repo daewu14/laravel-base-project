@@ -22,6 +22,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 Route::match(['get', 'post'], 'login', [AuthController::class, 'login'])->name('login');
 Route::post('register', [AuthController::class, 'register']);
+Route::get('test', [\App\Http\Controllers\DaewuTestController::class, 'getTest']);
 
 Route::middleware(['auth:sanctum'])->group(function () {
     Route::get('borzo/status', [BorzoController::class, 'index']);
